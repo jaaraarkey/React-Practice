@@ -1,7 +1,12 @@
-import "./App.css";
+import Accordion from "./components/accordion/Accordion";
 
 function App() {
-  return <>React Test!</>;
+  return (
+    <div className="flex flex-col gap-6">
+      <Accordion />
+      <Accordion />
+    </div>
+  );
 }
 
 export default App;
