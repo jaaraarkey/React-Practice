@@ -39,9 +39,9 @@ const Accordion = () => {
   };
   // Component body
   return (
-    <div className="wrapper m-2 flex flex-col items-center justify-center gap-2 rounded-lg shadow-md w-60">
+    <div className="wrapper flex flex-col items-center justify-center gap-2 rounded-lg shadow-md w-60 h-full">
       <button
-        className={`bg-slate-600 p-2 text-white  rounded-t-md w-60`}
+        className={`bg-slate-600 p-4 text-white  rounded-t-md w-60 `}
         onClick={() => {
           setEnableMulti(!enableMulti);
           btnHandler();
@@ -54,7 +54,7 @@ const Accordion = () => {
           data.map((e) => (
             <div
               key={e.id}
-              className={`item p-2 mb-2 bg-slate-400 text-slate-50 rounded-b-md`}
+              className={`item p-2 flex flex-col gap-2  bg-slate-200 text-slate-800 rounded-b-md`}
             >
               <div
                 className=" font-bold title gap-2 flex justify-between"
