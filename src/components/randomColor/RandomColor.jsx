@@ -3,7 +3,7 @@ import StarRating from "../star-raiting/StarRating";
 
 let rgbState = "";
 let rgb = "";
-const RandomColor = () => {
+const RandomColor = ({ divWidth, divHeigth }) => {
   const [typeColor, setTypeColor] = useState("hex");
   const [color, setColor] = useState("#ffffff");
 
@@ -16,9 +16,7 @@ const RandomColor = () => {
 
     for (let i = 0; i < 6; i++) {
       hexColor += hex[randomColorGeneratortUtil(hex.length)];
-      console.log(hexColor);
     }
-    console.log(hexColor);
     setColor(hexColor);
   };
   const handleCreateRnd_RGB_Color = () => {
@@ -32,15 +30,16 @@ const RandomColor = () => {
 
   useEffect(() => {
     typeColor === "rgb" ? handleCreateRnd_RGB_Color : handleCreateRnd_HEX_Color;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [typeColor]);
   return (
     <div
       style={{ background: color }}
-      className={`container flex flex-col gap-2 m-2 h-120 w-screen rounded-lg shadow-lg h-full`}
+      className={`container flex flex-col gap-2 h-${divHeigth} w-${divWidth} rounded-lg shadow-lg `}
     >
-      <h1 className="w-full text-center bg-slate-100 p-2 uppercase bg rounded-t-md ">
+      <h1 className=" text-center bg-slate-100 p-2 uppercase bg rounded-t-md ">
         Random color generator
-        <div className="flex gap-2  justify-center">
+        <div className="flex gap-2 justify-center">
           <button
             className={`bg-slate-700 text-slate-50 p-2 rounded-sm focus:bg-slate-500`}
             onClick={() => setTypeColor("hex")}
@@ -65,9 +64,9 @@ const RandomColor = () => {
           </button>
         </div>
       </h1>
-      <div className="flex justify-center">
-        <div className="flex flex-col items-center pl-2 w-full h-full ">
-          <h1 className=" uppercase font-bold p-2 text-center rounded-t-md bg-slate-50 w-[17.5rem]">
+      <div className="flex justify-center ">
+        <div className="flex flex-col items-center">
+          <h1 className=" uppercase font-bold p-2 text-center rounded-t-m bg-slate-50 w-[17.5rem]">
             <h1 className="">
               {typeColor === "hex" ? "HEX color: " : "RGB color: "}
             </h1>
