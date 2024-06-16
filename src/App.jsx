@@ -23,7 +23,6 @@ function App() {
           page={"2"}
         ></ImageSlider>
       </div>
-      {/* <div className="h-[24.5rem] w-screen"></div> */}
     </div>
   );
 }

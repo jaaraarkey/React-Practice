@@ -3,6 +3,7 @@ import StarRating from "../star-raiting/StarRating";
 
 let rgbState = "";
 let rgb = "";
+// eslint-disable-next-line react/prop-types
 const RandomColor = ({ divWidth, divHeigth }) => {
   const [typeColor, setTypeColor] = useState("hex");
   const [color, setColor] = useState("#ffffff");
